@@ -1,0 +1,14 @@
+questions:
+- variable: assertsClusterEnv
+  default: ""
+  required: true
+  type: string
+  label: aserts_cluster_env
+  description: Cluster where Asserts is installed
+  group: "Global Settings"
+- variable: assertsClusterSite
+  default: ""
+  type: string
+  label: aserts_cluster_site
+  description: Site what Asserts is monitoring
+  group: "Global Settings"
