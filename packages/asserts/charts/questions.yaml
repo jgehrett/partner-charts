@@ -10,5 +10,5 @@ questions:
   default: ""
   type: string
   label: aserts_cluster_site
-  description: Site what Asserts is monitoring
+  description: Site that Asserts is monitoring
   group: "Global Settings"
