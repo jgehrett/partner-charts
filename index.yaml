@@ -286,6 +286,47 @@ entries:
     urls:
     - assets/artifactory-jcr/artifactory-jcr-2.5.100.tgz
     version: 2.5.100
+  asserts:
+  - apiVersion: v2
+    created: "2022-09-29T18:58:39.838582+02:00"
+    dependencies:
+    - condition: alertmanager.enabled
+      name: alertmanager
+      repository: file://./charts/alertmanager
+    - name: common
+      repository: file://./charts/common
+    - condition: knowledge-sensor.enabled
+      name: knowledge-sensor
+      repository: file://./charts/knowledge-sensor
+    - alias: postgres
+      condition: postgres.enabled
+      name: postgresql
+      repository: file://./charts/postgresql
+    - condition: promxyruler.enabled
+      name: promxyruler
+      repository: file://./charts/promxyruler
+    - condition: promxyuser.enabled
+      name: promxyuser
+      repository: file://./charts/promxyuser
+    - alias: redisearch
+      condition: redisearch.enabled
+      name: redis
+      repository: file://./charts/redis
+    - alias: tsdb
+      condition: tsdb.enabled
+      name: victoria-metrics-single
+      repository: file://./charts/victoria-metrics-single
+    description: Asserts Helm Chart to configure entire asserts stack
+    digest: 1599ba0893a9c186196c60db3099ed3eb30453f4299723812becaad34f0c34d6
+    icon: https://www.asserts.ai/favicon.png
+    maintainers:
+    - name: Asserts
+      url: https://github.com/asserts
+    name: asserts
+    type: application
+    urls:
+    - assets/asserts/asserts-0.1.0.tgz
+    version: 0.1.0
   aws-event-sources:
   - annotations:
       catalog.cattle.io/certified: partner
