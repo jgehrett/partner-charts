@@ -163,7 +163,7 @@ data:
             master_name: mymaster
             sentinels: {{ include "asserts.searchSentinelHosts" . }}
       tsdb:
-        url: http://{{.Release.Name}}-tsdb-server.{{include "domain" .}}:8428
+        url: http://{{.Release.Name}}-victoria-metrics-single-server.{{include "domain" .}}:8428
       oauth2:
         cookie:
           domain: localhost

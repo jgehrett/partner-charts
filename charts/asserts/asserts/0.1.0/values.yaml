@@ -426,9 +426,9 @@ knowledge-sensor:
   promxyEnabled: true
 
 
-## Tsdb configuration
+## victoria-metrics-single configuration
 ## ref: https://github.com/asserts/helm-charts/blob/master/charts/victoria-metrics-single/values.yaml
-tsdb:
+victoria-metrics-single:
   enabled: true
   rbac:
     create: false
@@ -438,13 +438,13 @@ tsdb:
     create: false
     name: asserts
 
-  configMap: asserts-tsdb-scrapeconfig
+  configMap: asserts-victoria-metrics-single-scrapeconfig
   server:
     image:
       tag: v1.75.1
 
-    nameOverride: "tsdb"
-    fullNameOverride: "tsdb"
+    nameOverride: "victoria-metrics-single"
+    fullNameOverride: "victoria-metrics-single"
 
     initContainers:
       ## wait for the knowledge-sensor to be ready to
@@ -458,7 +458,7 @@ tsdb:
           - "420"
       ## initially add rule files to volume on startup
       ## after the knowledge-sensor is ready. This is a
-      ## way to make sure the tsdb doesn't startup with
+      ## way to make sure the victoria-metrics-single doesn't startup with
       ## empty rules as it will crash or run with an empty
       ## set.
       - name: init-add-rule-files
@@ -484,10 +484,10 @@ tsdb:
       search.latencyOffset: 15s
       memory.allowedPercent: 50
 
-    ## scrape configuration for the tsdb in config/tsdb-scrape-configmap.yaml
+    ## scrape configuration for the victoria-metrics-single in config/victoria-metrics-single-scrape-configmap.yaml
     scrape:
       enabled: true
-      configMap: asserts-tsdb-scrapeconfig
+      configMap: asserts-victoria-metrics-single-scrapeconfig
 
     persistentVolume:
       size: 8Gi
@@ -622,7 +622,7 @@ alertmanager:
 promxyruler:
   enabled: true
   image:
-    repository: asserts/promxy
+    repository: asserts/promxyruler
     tag: v0.1.0
 
   serviceAccount:
@@ -632,11 +632,11 @@ promxyruler:
   existingConfigMap: asserts-promxyruler
 
   initContainers:
-    - name: wait-for-tsdb
+    - name: wait-for-victoria-metrics-single
       image: asserts/wait-for:v2.2.3
       imagePullPolicy: IfNotPresent
       args:
-        - "{{.Release.Name}}-tsdb-server.{{.Release.Namespace}}.{{.Values.clusterDomain}}:8428"
+        - "{{.Release.Name}}-victoria-metrics-single-server.{{.Release.Namespace}}.{{.Values.clusterDomain}}:8428"
         - "-t"
         - "420"
 
@@ -680,7 +680,7 @@ promxyruler:
 promxyuser:
   enabled: true
   image:
-    repository: asserts/promxy
+    repository: asserts/promxyuser
     tag: v0.1.0
 
   serviceAccount:
@@ -690,11 +690,11 @@ promxyuser:
   existingConfigMap: asserts-promxyuser
 
   initContainers:
-    - name: wait-for-tsdb
+    - name: wait-for-victoria-metrics-single
       image: asserts/wait-for:v2.2.3
       imagePullPolicy: IfNotPresent
       args:
-        - "{{.Release.Name}}-tsdb-server.{{.Release.Namespace}}.{{.Values.clusterDomain}}:8428"
+        - "{{.Release.Name}}-victoria-metrics-single-server.{{.Release.Namespace}}.{{.Values.clusterDomain}}:8428"
         - "-t"
         - "420"
 

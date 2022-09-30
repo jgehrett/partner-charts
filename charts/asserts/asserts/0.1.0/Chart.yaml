@@ -22,8 +22,7 @@ dependencies:
   condition: redisearch.enabled
   name: redis
   repository: file://./charts/redis
-- alias: tsdb
-  condition: tsdb.enabled
+- condition: victoria-metrics-single.enabled
   name: victoria-metrics-single
   repository: file://./charts/victoria-metrics-single
 description: Asserts Helm Chart to configure entire asserts stack
