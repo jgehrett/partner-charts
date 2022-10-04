@@ -1,11 +1,9 @@
 --- charts-original/Chart.yaml
 +++ charts/Chart.yaml
-@@ -33,4 +33,9 @@
-   url: https://github.com/asserts
+@@ -34,3 +34,8 @@
  name: asserts
  type: application
--version: 0.4.0
-+version: 0.3.0
+ version: 0.4.0
 +kubeVersion: ">= 1.17"
 +annotations:
 +  catalog.cattle.io/certified: partner
