@@ -11,9 +11,13 @@
    repository: file://./charts/victoria-metrics-single
  description: Asserts Helm Chart to configure entire asserts stack
  icon: https://www.asserts.ai/favicon.png
-@@ -32,4 +34,4 @@
-   url: https://github.com/asserts
+@@ -33,3 +35,8 @@
  name: asserts
  type: application
--version: 0.6.0
-+version: 0.5.0
+ version: 0.6.0
++kubeVersion: ">= 1.17"
++annotations:
++  catalog.cattle.io/certified: partner
++  catalog.cattle.io/release-name: asserts
++  catalog.cattle.io/display-name: Asserts - Get to the root cause faster
+\ No newline at end of file
