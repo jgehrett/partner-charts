@@ -1,4 +1,4 @@
-#{{- if and .Values.victoria-metrics-single.server.scrape.enabled }}
+#{{- if and .Values.victoriaMetricsSingle.server.scrape.enabled }}
 apiVersion: v1
 kind: ConfigMap
 metadata:

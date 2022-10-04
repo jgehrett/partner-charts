@@ -428,7 +428,7 @@ knowledge-sensor:
 
 ## victoria-metrics-single configuration
 ## ref: https://github.com/asserts/helm-charts/blob/master/charts/victoria-metrics-single/values.yaml
-victoria-metrics-single:
+victoriaMetricsSingle:
   enabled: true
   rbac:
     create: false
