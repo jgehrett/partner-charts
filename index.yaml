@@ -292,6 +292,51 @@ entries:
       catalog.cattle.io/display-name: Asserts - Get to the root cause faster
       catalog.cattle.io/release-name: asserts
     apiVersion: v2
+    created: "2022-10-04T14:38:10.261743+02:00"
+    dependencies:
+    - condition: alertmanager.enabled
+      name: alertmanager
+      repository: file://./charts/alertmanager
+    - name: common
+      repository: file://./charts/common
+    - condition: knowledge-sensor.enabled
+      name: knowledge-sensor
+      repository: file://./charts/knowledge-sensor
+    - condition: postgresql.enabled
+      name: postgresql
+      repository: file://./charts/postgresql
+    - condition: promxyruler.enabled
+      name: promxyruler
+      repository: file://./charts/promxyruler
+    - condition: promxyuser.enabled
+      name: promxyuser
+      repository: file://./charts/promxyuser
+    - condition: redisearch.enabled
+      name: redisearch
+      repository: file://./charts/redisearch
+    - condition: redisgraph.enabled
+      name: redisgraph
+      repository: file://./charts/redisgraph
+    - condition: victoria-metrics-single.enabled
+      name: victoria-metrics-single
+      repository: file://./charts/victoria-metrics-single
+    description: Asserts Helm Chart to configure entire asserts stack
+    digest: 9f902c450df912c65d96ba900ff640551270a6cde373a245d8970dc2be2ff0be
+    icon: https://www.asserts.ai/favicon.png
+    kubeVersion: '>= 1.17'
+    maintainers:
+    - name: Asserts
+      url: https://github.com/asserts
+    name: asserts
+    type: application
+    urls:
+    - assets/asserts/asserts-0.4.2.tgz
+    version: 0.4.2
+  - annotations:
+      catalog.cattle.io/certified: partner
+      catalog.cattle.io/display-name: Asserts - Get to the root cause faster
+      catalog.cattle.io/release-name: asserts
+    apiVersion: v2
     created: "2022-10-04T13:20:30.115709+02:00"
     dependencies:
     - condition: alertmanager.enabled
