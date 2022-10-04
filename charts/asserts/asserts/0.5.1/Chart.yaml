@@ -34,9 +34,4 @@ maintainers:
   url: https://github.com/asserts
 name: asserts
 type: application
-version: 0.6.0
-kubeVersion: ">= 1.17"
-annotations:
-  catalog.cattle.io/certified: partner
-  catalog.cattle.io/release-name: asserts
-  catalog.cattle.io/display-name: Asserts - Get to the root cause faster
+version: 0.5.1
