@@ -1,4 +1,4 @@
-{{- if and .Values.victoria-metrics-single.server.scrape.enabled }}
+#{{- if and .Values.victoria-metrics-single.server.scrape.enabled }}
 apiVersion: v1
 kind: ConfigMap
 metadata:
@@ -968,4 +968,4 @@ data:
       scheme: http
       scrape_interval: 30s
       scrape_timeout: 15s
-{{- end }}
+#{{- end }}
