@@ -1,0 +1,14 @@
+questions:
+- variable: assertsClusterEnv
+  default: ""
+  required: true
+  type: string
+  label: asserts_cluster_env
+  description: In order to fully monitor Asserts, this value must match the env of the cluster where you're installing Asserts
+  group: "Global Settings"
+- variable: assertsClusterSite
+  default: ""
+  type: string
+  label: asserts_cluster_site
+  description: Site that Asserts is monitoring
+  group: "Global Settings"
