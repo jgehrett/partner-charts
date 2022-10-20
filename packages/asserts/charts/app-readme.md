@@ -4,8 +4,7 @@
 
 ## Installation
 
-The default installation of Asserts is all you need to transform your Prometheus metrics into an intelligent graph
-and contextual alerts.
+Asserts is all you need to transform your Prometheus metrics into an intelligent graph and contextual alerts.
 
 ## More Info
 
